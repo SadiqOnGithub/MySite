@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&display=swap");
+
+:root {
+  --bg-wash: hsl(32, 6%, 5%);
+  --text-color: hsl(32, 10%, 98%);
+  --meta-color: hsl(32, 8%, 90%);
+  --code-wash: #222;
+  --code-color: #eee;
+  --hover-color: hsl(350, 70%, 56%);
+
+  --font-sans: "Soehne", system-ui, -apple-system, sans-serif;
+  --font-serif: "Tiempos Text", Georgia, serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --meta-font: 80%;
+  --col-gap: clamp(0.67rem, 2.5vmin, 2.5rem);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-wash);
+  color: var(--text-color);
+  font-family: var(--font-sans);
+  font-size: clamp(100%, 1.3vw, 170%);
+  line-height: 1.2;
+  padding: 0.67em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--hover-color);
+}
+
+footer a,
+.contact a,
+.FCC__link {
+  text-decoration: underline;
+  text-decoration-color: var(--hover-color);
+  text-decoration-thickness: max(.05em, 1px);
+}
+
+
+/* =================
+HEADER
+==================== */
+
+header {
+  font-family: var(--font-serif);
+  padding: 0.5em 1em 1.5em 0.5em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+header span {
+  width: clamp(20ch, calc(28% + var(--col-gap)), 45ch);
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+header li {
+  margin-inline-end: 1em;
+}
+
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 0;
+  }
+  header span {
+    margin-block-end: 0.75em;
+  }
+}
+
+/* =================
+MAIN
+==================== */
+
+.section__main {
+  font-size: clamp(1.5rem, 8vmin, 4rem);
+  letter-spacing: -0.025em;
+  margin-bottom: 0.3em;
+}
+
+.section__main p {
+  margin-block-start: 0;
+}
+
+.section__main .hl {
+  color: var(--hover-color);
+}
+
+.section__main .hl:hover {
+  color: inherit;
+}
+
+/* =================
+TABLE
+==================== */
+
+.table__row {
+  display: flex;
+  gap: var(--col-gap);
+  border-top: 2px solid var(--meta-color);
+  padding-block: 0.5em 1.5em;
+}
+
+.table__col-1 {
+  width: 28%;
+  text-align: right;
+}
+
+.table__col-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.table__h {
+  text-transform: capitalize;
+}
+
+.table__d {
+  margin-bottom: 0.25em;
+  text-transform: capitalize;
+}
+
+.table__m {
+  color: var(--meta-color);
+  font-size: var(--meta-font);
+}
+
+/* ======================
+CONATCT & FOOTER
+========================= */
+.contact {
+  font-size: var(--meta-font);
+  margin-block: 4em 3em;
+}
+
+.contact code {
+  padding: 0.15em 0.25em;
+  color: var(--code-color);
+  background-color: var(--code-wash);
+  border-radius: 0.5em;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+footer {
+  font-size: var(--meta-font);
+  border-top: 1px solid var(--meta-color);
+  padding-block: 1em 3em;
+}
+
+footer p,
+.contact p {
+  max-width: 70ch;
+  margin-inline: calc(28% + 1.5rem) auto;
+}
+
+@media (max-width: 700px) {
+  footer p,
+  .contact p {
+    margin: 0;
+  }
+}
